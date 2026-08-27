@@ -17,8 +17,10 @@ pipeline {
                     rm -rf backend-project-demo
                     git clone https://github.com/mugibalankiaq-mugi/backend-project-demo.git
                     cd backend-project-demo
-                    docker-compose down || true
-                    docker-compose up --build -d
+                    docker stop backend-app || true
+                    docker rm backend-app || true
+                    docker build -t backend-app .
+                    docker run -d --name backend-app -p 5001:5000 backend-app
                     '
                     """
                 }
