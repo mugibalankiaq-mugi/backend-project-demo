@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Deploy to EC2') {
             steps {
-                sshagent(['newbackend-ssh']) {
+                sshagent(['backend-ssh']) {
                     sh """
                     ssh -o StrictHostKeyChecking=no ubuntu@100.48.18.162 '
                     set -e
