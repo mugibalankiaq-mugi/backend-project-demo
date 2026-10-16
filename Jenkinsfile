@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sshagent(['backend-flow']) {
                     sh """
-                    ssh -o StrictHostKeyChecking=no ubuntu@15.252.180.0 '
+                    ssh -o StrictHostKeyChecking=no ubuntu@13.51.206.223 '
                     set -e
                     mkdir -p /home/ubuntu/backend-project-demo
                     cd /home/ubuntu/backend-project-demo
